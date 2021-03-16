@@ -1,5 +1,6 @@
 package com.ipsoft.rxjava.ui.main.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ipsoft.rxjava.data.model.User
@@ -39,5 +40,14 @@ class MainViewModel(
                     users.postValue(Resource.error("Something Went Wrong", null))
                 })
         )
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.dispose()
+    }
+
+    fun getUsers(): LiveData<Resource<List<User>>> {
+        return users
     }
 }

@@ -1,7 +1,7 @@
 package com.ipsoft.rxjava.data.api
 
 import com.ipsoft.rxjava.data.model.User
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 
 /**
  *
